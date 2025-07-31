@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIDESK – AI-Powered Customer Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #0f0f11;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .coming-soon {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #0f0f11;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        perspective: 1000px;
+        transition: opacity 1s ease;
+      }
+
+      .coming-box {
+        font-size: 2.5rem;
+        color: #ffffff;
+        background: linear-gradient(135deg, #1f1f22, #27272a);
+        border: 1px solid #724ae8;
+        padding: 2rem 3rem;
+        border-radius: 1rem;
+        transform-style: preserve-3d;
+        animation: flipIn 1.5s ease forwards;
+        box-shadow: 0 0 30px #724ae860;
+      }
+
+      @keyframes flipIn {
+        0% {
+          transform: rotateY(90deg);
+          opacity: 0;
+        }
+        100% {
+          transform: rotateY(0deg);
+          opacity: 1;
+        }
+      }
+
+      .glow-button:hover {
+        box-shadow: 0 0 12px #724ae8aa;
+      }
+    </style>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- Splash -->
+    <div id="splash" class="coming-soon">
+      <div class="coming-box">AIDESK – Coming Soon</div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="opacity-0 transition-opacity duration-1000">
+      <!-- Hero Section -->
+      <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white leading-tight scroll-fade">
+          AI-Powered Customer Support.<br />
+          <span class="bg-gradient-to-r from-[#724ae8] to-[#a073ff] bg-clip-text text-transparent">
+            Instant. Reliable. Human-like.
+          </span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl scroll-fade delay-300">
+          Replace call centers with your own custom-trained AI agents – no code, no complexity.
+        </p>
+        <div class="mt-8 flex gap-4 scroll-fade delay-500">
+          <a href="#" class="bg-[#724ae8] glow-button hover:bg-[#5e3bd6] text-white px-6 py-3 rounded-xl transition-all font-semibold">
+            Join Waitlist
+          </a>
+          <a href="#" class="border border-gray-500 hover:border-white text-gray-300 hover:text-white px-6 py-3 rounded-xl transition-all font-semibold">
+            Book Demo
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-24 px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 scroll-fade">Why AIDESK?</h2>
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div class="bg-[#1c1c1e] p-6 rounded-xl shadow-xl scroll-fade">
+            <h3 class="text-xl font-semibold mb-2 text-[#a073ff]">Instant Answers</h3>
+            <p class="text-gray-400">Your AI agent responds in milliseconds – no more waiting on hold.</p>
+          </div>
+          <div class="bg-[#1c1c1e] p-6 rounded-xl shadow-xl scroll-fade delay-300">
+            <h3 class="text-xl font-semibold mb-2 text-[#a073ff]">24/7 Availability</h3>
+            <p class="text-gray-400">Support that never sleeps. Serve global customers anytime, anywhere.</p>
+          </div>
+          <div class="bg-[#1c1c1e] p-6 rounded-xl shadow-xl scroll-fade delay-600">
+            <h3 class="text-xl font-semibold mb-2 text-[#a073ff]">Custom-Trained</h3>
+            <p class="text-gray-400">Train your AI using real transcripts and documents from your business.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-10 text-center text-sm text-gray-500">
+        © 2025 AIDESK. All rights reserved.
+      </footer>
+    </main>
+
+    <!-- JS -->
+    <script>
+      // Splash screen transition
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("splash").style.opacity = "0";
+          setTimeout(() => {
+            document.getElementById("splash").style.display = "none";
+            document.getElementById("mainContent").classList.remove("opacity-0");
+          }, 1000);
+        }, 2000);
+      });
+
+      // Scroll reveal animations
+      ScrollReveal().reveal(".scroll-fade", {
+        duration: 1000,
+        origin: "bottom",
+        distance: "50px",
+        easing: "ease-in-out",
+        interval: 200,
+        reset: false
+      });
+    </script>
+  </body>
+</html>
